@@ -13,8 +13,8 @@ const Form: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col pl-10 w-4/5 md:w-full m-auto pt-12">
-            <h1 className='text-[#222741] font-bold text-5xl'>Stay updated!</h1>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:pl-10 w-full pt-12">
+            <h1 className='text-[#222741] font-bold text-4xl md:text-5xl'>Stay updated!</h1>
 
             <p className='text-[#222741] text-sm mt-5 text-bold'>Join 60,000+ product managers receiving monthly updates on:</p>
 
@@ -28,7 +28,7 @@ const Form: React.FC = () => {
           <input type="email" {...register("email", { required: true })} className="mb-1 h-10 rounded-lg border-2 pl-3 outline-none" placeholder='email@company.com' />
           {errors.email && <span className="text-orange-800 text-xs">This field is required</span>}
 
-          <button type="submit" className="bg-[#232742] text-white h-10 rounded-lg mt-3">Subscribe to monthly newsletter</button>
+          <button type="submit" className="bg-[#232742] text-white h-10 rounded-lg mt-3 mb-8 md:mb-0">Subscribe to monthly newsletter</button>
         </form>
       );
 }
