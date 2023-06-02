@@ -1,15 +1,17 @@
 import React from 'react'
 import Lists from './Lists';
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 type Inputs = {
   email: string,
 };
 
 const Form: React.FC = () => {
-    // const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors },} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => {
+      navigate("/success");
         console.log(data)
     };
 
