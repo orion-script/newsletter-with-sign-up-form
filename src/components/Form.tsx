@@ -7,7 +7,8 @@ type Inputs = {
 };
 
 const Form: React.FC = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    // const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors },} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = data => {
         console.log(data)
     };
@@ -25,8 +26,8 @@ const Form: React.FC = () => {
             <Lists text="And much more!" />
 
           <label htmlFor="" className='text-[#222741] text-sm font-bold mt-8 mb-2'>Email address</label>
+          {errors.email && <span className="text-orange-800 text-xs text-end">This field is required</span>}
           <input type="email" {...register("email", { required: true })} className="mb-1 h-10 rounded-lg border-2 pl-3 outline-none" placeholder='email@company.com' />
-          {errors.email && <span className="text-orange-800 text-xs">This field is required</span>}
 
           <button type="submit" className="bg-[#232742] text-white h-10 rounded-lg mt-3 mb-8 md:mb-0">Subscribe to monthly newsletter</button>
         </form>
